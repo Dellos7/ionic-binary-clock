@@ -1,7 +1,5 @@
-import { Component, State, Element } from '@stencil/core';
-import { BinaryClockUtils } from '../../global/binary-clock-utils';
-import { BinaryComponent } from '../../global/binary-component';
-
+import { Component, State, Element, Prop } from '@stencil/core';
+import { BinaryComponent, BinaryClockComponentType } from '../../global/binary-component';
 
 @Component({
   tag: 'binary-clock-hour',
@@ -11,32 +9,28 @@ export class BinaryClockHour extends BinaryComponent {
 
   timer: number;
   @State() time: Date;
+  @Prop() elemSize: string;
   @Element() el: HTMLElement;
 
   componentWillLoad() {
-    this.timer = window.setInterval(() => {
-      let time = new Date();
-      if( time ) {
-        let hours: number = time.getHours();
-        let binary: number[] = BinaryClockUtils.decimalNumberToBinary( hours );
-        this.updateBinaryView( binary );
-        this.time = time;
-      }
-    }, 1000);
+    this.setTimer( BinaryClockComponentType.HOUR, 1000 );
   }
 
   componentDidUnload() {
-    window.clearInterval(this.timer);
+    this.removeTimer();
   }
 
   render() {
+    const elemSize = this.elemSize;
     return (
-      <div>
-        <binary-elem pos="16"></binary-elem>
-        <binary-elem pos="8"></binary-elem>
-        <binary-elem pos="4"></binary-elem>
-        <binary-elem pos="2"></binary-elem>
-        <binary-elem pos="1"></binary-elem>
+      <div class="center-content">
+        <binary-elem iconName="time" size={elemSize}></binary-elem>
+        <binary-elem pos="16" size={elemSize}></binary-elem>
+        <binary-elem pos="8"  size={elemSize}></binary-elem>
+        <binary-elem pos="4"  size={elemSize}></binary-elem>
+        <binary-elem pos="2"  size={elemSize}></binary-elem>
+        <binary-elem pos="1"  size={elemSize}></binary-elem>
+        <label class="label">hours</label>
       </div>
     );
   }

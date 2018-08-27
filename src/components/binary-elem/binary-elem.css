@@ -1,7 +1,19 @@
+ion-icon.large {
+    font-size: 32px;
+}
+
+ion-icon.normal {
+    font-size: 25px;
+}
+
+ion-icon.small {
+    font-size: 18px;
+}
+
 ion-icon.inactive svg {
     color: rgba(128, 128, 128, 0.55);;
 }
 
 ion-icon.active svg {
-    color: rgb( 75, 141, 252 );
+    color: var(--icon-color);
 }

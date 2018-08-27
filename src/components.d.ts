@@ -26,13 +26,14 @@ declare global {
 }
 
 import 'ionicons';
+import '@ionic/core';
 
 
 declare global {
 
   namespace StencilComponents {
     interface BinaryClockHour {
-
+      'elemSize': string;
     }
   }
 
@@ -55,7 +56,7 @@ declare global {
   }
   namespace JSXElements {
     export interface BinaryClockHourAttributes extends HTMLAttributes {
-
+      'elemSize'?: string;
     }
   }
 }
@@ -65,7 +66,7 @@ declare global {
 
   namespace StencilComponents {
     interface BinaryClockMinutes {
-
+      'elemSize': string;
     }
   }
 
@@ -88,7 +89,7 @@ declare global {
   }
   namespace JSXElements {
     export interface BinaryClockMinutesAttributes extends HTMLAttributes {
-
+      'elemSize'?: string;
     }
   }
 }
@@ -98,7 +99,7 @@ declare global {
 
   namespace StencilComponents {
     interface BinaryClockSeconds {
-
+      'elemSize': string;
     }
   }
 
@@ -121,7 +122,7 @@ declare global {
   }
   namespace JSXElements {
     export interface BinaryClockSecondsAttributes extends HTMLAttributes {
-
+      'elemSize'?: string;
     }
   }
 }
@@ -131,7 +132,7 @@ declare global {
 
   namespace StencilComponents {
     interface BinaryClock {
-
+      'elemSize': string;
     }
   }
 
@@ -154,7 +155,7 @@ declare global {
   }
   namespace JSXElements {
     export interface BinaryClockAttributes extends HTMLAttributes {
-
+      'elemSize'?: string;
     }
   }
 }
@@ -164,7 +165,9 @@ declare global {
 
   namespace StencilComponents {
     interface BinaryElem {
+      'iconName': string;
       'pos': string;
+      'size': string;
       'updateElement': (active: boolean) => void;
     }
   }
@@ -188,7 +191,9 @@ declare global {
   }
   namespace JSXElements {
     export interface BinaryElemAttributes extends HTMLAttributes {
+      'iconName'?: string;
       'pos'?: string;
+      'size'?: string;
     }
   }
 }

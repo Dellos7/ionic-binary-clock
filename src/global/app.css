@@ -1,0 +1,18 @@
+:root {
+    --icon-color: #488aff;
+  }
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: Eina,"Helvetica Neue",Helvetica,sans-serif;
+}
+
+label.label {
+    margin-left: 5px;
+}
+
+.center-content {
+    display: flex;
+    align-items: center;
+}

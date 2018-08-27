@@ -1,5 +1,11 @@
 import { Component, Prop, Element, Method, State } from '@stencil/core';
 
+export enum BinaryElemSize {
+  LARGE = "large",
+  NORMAL = "normal",
+  SMALL = "small"
+}
+
 @Component({
   tag: 'binary-elem',
   styleUrl: 'binary-elem.css'
@@ -7,18 +13,10 @@ import { Component, Prop, Element, Method, State } from '@stencil/core';
 export class BinaryElem {
 
   @Element() el: HTMLElement;
-  @Prop() pos: string;
   @State() active: boolean = false;
-
-  componentDidLoad() {
-    
-  }
-
-  render() {
-    return (
-        <ion-icon name="logo-ionic" size="large" class="inactive"></ion-icon>
-    );
-  }
+  @Prop() pos: string;
+  @Prop() size: string;
+  @Prop() iconName: string = "logo-ionic";
 
   @Method()
   updateElement( active: boolean ) {
@@ -32,4 +30,12 @@ export class BinaryElem {
     }
     this.active = active;
   }
+
+  render() {
+    const classes = `${this.size} ${this.pos ? ' inactive' : ''}`;
+    return (
+      <ion-icon name={this.iconName} class={classes}></ion-icon>
+    );
+  }
+  
 }
