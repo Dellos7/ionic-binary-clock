@@ -25,8 +25,8 @@ declare global {
   interface HTMLAttributes {}
 }
 
-import 'ionicons';
 import '@ionic/core';
+import 'ionicons';
 
 
 declare global {

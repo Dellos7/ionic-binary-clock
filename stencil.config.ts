@@ -10,6 +10,5 @@ export const config: Config = {
       type: 'www',
       serviceWorker: null
     }
-  ],
-  globalStyle: 'src/global/app.css'
+  ]
 };
