@@ -3,3 +3,5 @@
 # Binary clock Web Component
 
 Binary clock web component built with Stencil.
+
+![](.github/binary-clock.gif)
