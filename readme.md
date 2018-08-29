@@ -4,4 +4,19 @@
 
 Binary clock web component built with Stencil.
 
+## Example
+
 ![](.github/binary-clock.gif)
+
+## How to use it
+
+Add this into your html:
+
+```html
+<script src='https://unpkg.com/binary-clock@latest/dist/binary-clock.js'></script>
+```
+
+Then use it:
+```html
+<binary-clock></binary-clock>
+```
